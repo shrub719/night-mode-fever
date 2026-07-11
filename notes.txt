@@ -1,0 +1,52 @@
+"gpu hardware register" at 0xcc008000
+what is a callstack?
+
+always looked like screeenshot
+801d74a4
+
+black screen:
+041d74ac 60000000
+
+go for a perfect:
+003201b8 00000001
+
+========================================
+               PLAN
+
+inject at 1a20
+check if nightChecked set (mem loc)
+if it isn't:
+    check night button -> disable graphics
+    set nightChecked to 01
+if it is:
+    enable graphics
+    set nightChecked to 00
+end if
+
+========================================
+
+1a20: stbx r4,r9,r12
+
+perfect bool changed, chron order:
+80009dcc
+80009e00
+80009e04
+80001a20
+80009e50
+
+on fail:
+80009f08
+
+on exit:
+8ca4
+8cd8
+8cdc
+1a20
+
+on complete:
+9e50
+9dcc
+9e00
+9e04
+1a20
+
