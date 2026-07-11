@@ -1,41 +1,55 @@
+# injected at 0x80009e50
+
+stb r3, -27911(r13)
+
+# address of graphics func
+lis r15, 0x801d
+ori r15, r15, 0x74ac
+
+# check if A held
+lis r16, 0x803b
+ori r16, r16, 0x3178
+lwz r16, 0(r16)
+andi. r16, r16, 0x800
+beq end
+
+# set night mode
+lis r17, 0x6000
+stw r17, 0(r15)
+
+end:
+# flush caches
+dcbst 0, r15
+sync
+icbi 0, r15
+isync
+
+li r15, 0x0
+li r16, 0x0
+li r17, 0x0
+# you never know
+
+# ================================
+
 # injected at 0x80001a20
 
 stbx r4, r9, r12
 
-# prepare address of graphics func
-lis r10, 0x801d
-ori r10, r10, 0x74ac
+# address of graphics func
+lis r8, 0x801d
+ori r8, r8, 0x74ac
 
-# check if night mode already set
-lwz r8, 0(r10)
-lis r9, 0x6000
-cmp cr0, r8, r9
-beq already_set
-
-# set night mode (hold A)
-lis r8, 0x803b
-ori r8, r8, 0x3178
-lwz r8, 0(r8)
-cmpwi r8, 0x800
-bne end
-stw r9, 0(r10)
-b end
-
-already_set:
 # undo night mode
 lis r9, 0x4800
 ori r9, r9, 0x10a9
-stw r9, 0(r10)
+stw r9, 0(r8)
 
-end:
 # flush caches
-dcbst 0, r10
+dcbst 0, r8
 sync
-icbi 0, r10
+icbi 0, r8
 isync
 
 li r8, 0x0
 li r9, 0x0
-li r10, 0x0
-# you never know
 
