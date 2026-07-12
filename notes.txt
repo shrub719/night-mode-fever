@@ -1,3 +1,12 @@
+TODO:
+- maybe find a different place to put the unset chunk; it completely hides
+the results screen
+- it should work without needing to go for a perfect. i know that's what night mode is
+for but i'm sure theres other checks made when a level starts that aren't perfect-related
+
+
+========================================
+
 "gpu hardware register" at 0xcc008000
 what is a callstack?
 
