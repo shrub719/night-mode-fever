@@ -5,6 +5,8 @@
 Once the cheat is active, hold A when starting any minigame (i.e. after the practise)
 and Night Mode will activate.
 
+As a side effect, you will always be able to Go for a Perfect.
+
 ## How to add
 
 1. Open Dolphin
@@ -14,6 +16,7 @@ and Night Mode will activate.
 
 ```
 $Night Mode (Hold A) [shrub719]
+003201B8 00000001
 C2009E50 00000009
 986D92F9 3DE0801D
 61EF74AC 3E00803B
