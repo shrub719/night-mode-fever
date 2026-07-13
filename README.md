@@ -10,7 +10,8 @@ As a side effect, you will always be able to Go for a Perfect.
 ## How to add
 
 1. Open Dolphin
-1. Right click on Rhythm Heaven Fever > Properties
+1. Go to Options > Configuration > General and check Enable Cheats
+1. In the title list, right click on Rhythm Heaven Fever > Properties
 1. Go to Gecko Codes > Add New Code
 1. Paste this into the Code section
 
